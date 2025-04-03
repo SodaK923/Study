@@ -1,0 +1,3 @@
+```java
+Stirng str = "string";
+```
