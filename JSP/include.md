@@ -4,7 +4,7 @@
 정적: <%@ include file="파일명.jsp" %>  
 동적: <jsp:include page="파일명.jsp" />  
 로그인이 됐을 경우 @@@님이 로그인했습니다 같이 바뀌니까 이럴 때 동적을 이용하는 것이 바람직하다.  
-
+  
 
 <%@ include file="파일명.jsp" %>  
 ✅ 예제: 네비게이션을 nav.jsp로 분리해서 include하기  
@@ -19,7 +19,7 @@
     </ul>
 </nav>
 ```
-
+  
 🔹 index.jsp (홈 페이지)
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -35,7 +35,7 @@
 </body>
 </html>
 ```
-
+  
 📌 차이점?
 ```jsp
 <%@ include file="nav.jsp" %> → 파일을 그대로 복붙(정적)
