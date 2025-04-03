@@ -1,3 +1,0 @@
-```java
-Stirng str = "string";
-```
