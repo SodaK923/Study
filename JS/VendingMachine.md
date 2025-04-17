@@ -12,71 +12,67 @@
     </style>
     <script>
         window.onload=()=>{
-            // 1000원 투입
-            var coinButton1000 = document.getElementById("coin1000");
-            coinButton1000.addEventListener("click", ()=>{
+            // 동전 넣는 메서드
+            insertCoin=(amount)=>{
                 var inputCoin = document.getElementById("inputCoin");
-                inputCoin.value=Number(inputCoin.value)+1000;
-            });
+                inputCoin.value=Number(inputCoin.value)+amount;
+            }
+
+            // 음료 추가 메서드
+            addDrink=(drink)=>{
+                var selectDrink=document.getElementById("output");
+                selectDrink.innerHTML+=drink;
+            }
+
+            // 잔액 계산 메서드
+            remainder=(coin)=>{
+                var outputCoin=document.getElementById("inputCoin");
+                outputCoin.value=Number(outputCoin.value)-coin;
+            }
+
+            // 1000원 투입
+            /*
+            var coinButton1000 = document.getElementById("coin1000");
+            coinButton1000.addEventListener("click", ()=>insertCoin(1000));
+            /**/
+            // -> 이케 한줄로 쓸 수도 있음
+            document.getElementById("coin1000").addEventListener("click", ()=>insertCoin(1000));
 
             // 500원 투입
-            var coinButton500 = document.getElementById("coin500");
-            coinButton500.addEventListener("click", ()=>{
-                var inputCoin = document.getElementById("inputCoin");
-                inputCoin.value=Number(inputCoin.value)+500;
-            });
+            document.getElementById("coin500").addEventListener("click", ()=>insertCoin(500));
 
-            
             // 100원 투입
-            var coinButton100 = document.getElementById("coin100");
-            coinButton100.addEventListener("click", ()=>{
-                var inputCoin = document.getElementById("inputCoin");
-                inputCoin.value=Number(inputCoin.value)+100;
-            });
+            document.getElementById("coin100").addEventListener("click", ()=>insertCoin(100));
 
 
             // 콜라
-            var colaButton = document.getElementById("cola");
             var cola = `<img src="img/콜라.jpg" height="70px">`;
-            colaButton.addEventListener("click", ()=>{
-                var inputCola = document.getElementById("output");
-                inputCola.innerHTML+=cola;
-                var outputCoin = document.getElementById("inputCoin");
-                outputCoin.value=Number(outputCoin.value)-1200;
+            document.getElementById("cola").addEventListener("click", ()=>{
+                addDrink(cola);
+                remainder(1200);
             });
-
 
             // 사이다
-            var ciderButton = document.getElementById("cider");
             var cider = `<img src="img/사이다.jpg" height="70px">`;
-            ciderButton.addEventListener("click", ()=>{
-                var inputCider = document.getElementById("output");
-                inputCider.innerHTML+=cider;
-                var outputCoin = document.getElementById("inputCoin");
-                outputCoin.value=Number(outputCoin.value)-1100;
+            document.getElementById("cider").addEventListener("click", ()=>{
+                addDrink(cider);
+                remainder(1100);
             });
-
 
             // 환타
-            var fantaButton = document.getElementById("fanta");
-            var fanta = `<img src="img/환타.jpg" height="70px">`;
-            fantaButton.addEventListener("click", ()=>{
-                var inputFanta = document.getElementById("output");
-                inputFanta.innerHTML+=fanta;
-                var outputCoin = document.getElementById("inputCoin");
-                outputCoin.value=Number(outputCoin.value)-1000;
+            var  fanta = `<img src="img/환타.jpg" height="70px">`;
+            document.getElementById("fanta").addEventListener("click", ()=>{
+                addDrink(fanta);
+                remainder(1000);
             });
 
-
             // 커피
-            var blackButton = document.getElementsByClassName("black");
             var black = `<img src="img/블랙.gif" height="70px">`;
+            var blackButton = document.getElementsByClassName("black");
             for(var i=0; i<blackButton.length; i++){
                 blackButton[i].addEventListener("click", ()=>{
-                    var inputBlack = document.getElementById("output");
-                    inputBlack.innerHTML+=black;
-                    var outputCoin = document.getElementById("inputCoin");
-                    outputCoin.value=Number(outputCoin.value)-400;
+                    addDrink(black);
+                    remainder(400);
                 });
             }
             
