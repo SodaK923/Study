@@ -24,7 +24,7 @@
                 selectDrink.innerHTML+=drink;
             }
 
-            // 잔액 계산 메서드
+            // 금액 차감 메서드
             remainder=(coin)=>{
                 var outputCoin=document.getElementById("inputCoin");
                 outputCoin.value=Number(outputCoin.value)-coin;
