@@ -69,6 +69,7 @@
             // 커피
             var black = `<img src="img/블랙.gif" height="70px">`;
             var blackButton = document.getElementsByClassName("black");
+            // 모든 버튼에 이벤트 추가
             for(var i=0; i<blackButton.length; i++){
                 blackButton[i].addEventListener("click", ()=>{
                     addDrink(black);
